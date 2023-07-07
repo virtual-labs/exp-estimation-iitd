@@ -21,6 +21,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.0/p5.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.0/addons/p5.dom.min.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <style>
         .sample-input {
@@ -89,8 +90,10 @@
                             <select id="distribution" onchange="change()">
                               <option value="" disabled selected> -- Select a type -- </option>
                               <option value="normal">Normal Distribution</option>
-                              <option value="poisson">Poisson distribution</option>
+                              <option value="poisson">Poisson Distribution</option>
                               <option value="exp">Exponential Distribution</option>
+                              <option value="geo">Geometric Distribution</option>
+                              <!-- <option value="gamma">Gamma Distribution</option> -->
                             </select>
                             <div id="selectedOption"></div>
                         </form>
@@ -98,6 +101,10 @@
                         <button id="Poisson" style="display: none;" onclick="poisson();">
                             Estimate λ
                           </button>
+                        <!-- <button id="graph" onclick="createMeanWithVariancePlot();">
+                            Plot
+                          </button> -->
+
 
                         <button id="exponential" style="display: none;" onclick="exp();">
                             Estimate λ
@@ -105,6 +112,14 @@
 
                         <button id="Normal" style="display: none;" onclick="normal();">
                             Estimate mean(μ) and variance(σ<sup>2</sup>)
+                          </button>
+
+                        <button id="geo" style="display: none;" onclick="geometric();">
+                            Estimate probability of success (p)
+                          </button>
+
+                        <button id="gamma" style="display: none;" onclick="gamma();">
+                            Estimate shape (k) and scale (θ)
                           </button>
 
                         <script>
@@ -115,12 +130,15 @@
                                 var poissonButton = document.getElementById("Poisson");
                                 var exponentialButton = document.getElementById("exponential");
                                 var normalButton = document.getElementById("Normal");
-
+                                var geoButton = document.getElementById("geo");
+                                var gammaButton = document.getElementById("gamma");
 
                                 // Reset button display
                                 poissonButton.style.display = "none";
                                 exponentialButton.style.display = "none";
                                 normalButton.style.display = "none";
+                                geoButton.style.display = "none";
+                                gammaButton.style.display = "none";
 
                                 // Show corresponding button based on the selected option
                                 if (select.value === "poisson") {
@@ -129,20 +147,13 @@
                                     exponentialButton.style.display = "block";
                                 } else if (select.value === "normal") {
                                     normalButton.style.display = "block";
+                                } else if (select.value === "geo") {
+                                    geoButton.style.display = "block";
+                                } else if (select.value === "gamma") {
+                                    gammaButton.style.display = "block";
                                 }
                             }
-
-                            function pointEstimation() {
-                                // Perform point estimation based on the selected option
-                                var select = document.getElementById("distribution");
-                                var selectedOption = select.value;
-
-                                // Example: Log the selected option for demonstration purposes
-                                console.log("Selected Option:", selectedOption);
-                            }
                         </script>
-
-
                     </div>
 
                     <div id="data-result-area"></div>
@@ -150,6 +161,7 @@
                 <div class="right">
                     <div id="graph-result-area">
                         <table id="inputTable"></table>
+                        <div id="plotDiv"></div>
                         <canvas id="myChart"></canvas>
                     </div>
                 </div>

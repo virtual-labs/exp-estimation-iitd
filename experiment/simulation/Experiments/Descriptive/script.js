@@ -560,14 +560,20 @@ function calculateInterval() {
     resultArea.innerHTML = ''; // Clear previous results
     confidenceIntervals.forEach(interval => {
         const label = interval.label;
-        const lowerBound = interval.confidenceInterval[0];
-        const upperBound = interval.confidenceInterval[1];
+        var lowerBound = interval.confidenceInterval[0];
+        var upperBound = interval.confidenceInterval[1];
 
         const intervalText = `${(confidenceLevel*100).toFixed(2)}% Confidence Interval for the mean of ${label}: [${lowerBound.toFixed(2)}, ${upperBound.toFixed(2)}]`;
         const intervalElement = document.createElement('p');
         intervalElement.textContent = intervalText;
         resultArea.appendChild(intervalElement);
+        createMeanWithIntervalPlot(mydata[0].values, lowerBound, upperBound);
+
     });
+
+
+
+
 }
 
 
@@ -652,7 +658,12 @@ function calculateInterval2() {
         const intervalElement = document.createElement('p');
         intervalElement.textContent = intervalText;
         resultArea.appendChild(intervalElement);
+        createMeanWithIntervalPlot(mydata[0].values, lowerBound, upperBound);
+
     });
+
+
+
 }
 
 
@@ -721,6 +732,9 @@ function calculateInterval3() {
     const intervalElement = document.createElement('p');
     intervalElement.textContent = intervalText;
     resultArea.appendChild(intervalElement);
+
+    const graph = document.getElementById('plotDiv');
+    graph.innerHTML = ''; // Clear previous results
 }
 
 
@@ -750,6 +764,7 @@ function estimateNormalParameters(data) {
     };
 }
 
+
 function normal() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
 
@@ -773,21 +788,42 @@ function normal() {
     });
 
     // Estimate mean and variance
-    const estimatedParameters = estimateNormalParameters(mydata[0].values);
-    const estimatedMean = estimatedParameters.mean;
-    const estimatedVariance = estimatedParameters.variance;
+    var estimatedParameters = estimateNormalParameters(mydata[0].values);
+    var estimatedMean = estimatedParameters.mean;
+    var estimatedVariance = estimatedParameters.variance;
 
     // Display estimated mean and variance
     const resultArea = document.getElementById('data-result-area');
     resultArea.innerHTML = ''; // Clear previous results
 
-    const meanElement = document.createElement('p');
-    meanElement.textContent = `MLE Mean: ${estimatedMean.toFixed(2)}`;
+    var heading = document.createElement('p');
+    heading.textContent = `Maximum Likelehood Estimator`;
+    resultArea.appendChild(heading);
+
+    var meanElement = document.createElement('p');
+    meanElement.textContent = ` Mean: ${estimatedMean.toFixed(2)}`;
     resultArea.appendChild(meanElement);
 
-    const varianceElement = document.createElement('p');
-    varianceElement.textContent = `MLE Variance: ${estimatedVariance.toFixed(2)}`;
+    var varianceElement = document.createElement('p');
+    varianceElement.textContent = ` Variance: ${estimatedVariance.toFixed(2)}`;
     resultArea.appendChild(varianceElement);
+
+    heading = document.createElement('p');
+    heading.textContent = `Method of Moments`;
+    resultArea.appendChild(heading);
+
+    meanElement = document.createElement('p');
+    meanElement.textContent = ` Mean: ${estimatedMean.toFixed(2)}`;
+    resultArea.appendChild(meanElement);
+
+    varianceElement = document.createElement('p');
+    varianceElement.textContent = ` Variance: ${estimatedVariance.toFixed(2)}`;
+    resultArea.appendChild(varianceElement);
+
+    createMeanWithVariancePlot(mydata[0].values);
+
+
+
 }
 
 function estimateExponentialParameter(data) {
@@ -835,9 +871,16 @@ function exp() {
     const resultArea = document.getElementById('data-result-area');
     resultArea.innerHTML = ''; // Clear previous results
 
-    const meanElement = document.createElement('p');
-    meanElement.textContent = `MLE λ : ${estimatedParameters.toFixed(2)}`;
+    var meanElement = document.createElement('p');
+    meanElement.textContent = `Maximum Liklehood Estimator λ : ${estimatedParameters.toFixed(2)}`;
     resultArea.appendChild(meanElement);
+
+    meanElement = document.createElement('p');
+    meanElement.textContent = `Method of Moments λ : ${estimatedParameters.toFixed(2)}`;
+    resultArea.appendChild(meanElement);
+
+    createMeanWithVariancePlot(mydata[0].values);
+
 
 }
 
@@ -884,7 +927,259 @@ function poisson() {
     const resultArea = document.getElementById('data-result-area');
     resultArea.innerHTML = ''; // Clear previous results
 
-    const lambdaElement = document.createElement('p');
-    lambdaElement.textContent = `MLE λ: ${estimatedLambda.toFixed(2)}`;
+    var lambdaElement = document.createElement('p');
+    lambdaElement.textContent = `Maximum Liklehood Estimator λ: ${estimatedLambda.toFixed(2)}`;
     resultArea.appendChild(lambdaElement);
+
+    lambdaElement = document.createElement('p');
+    lambdaElement.textContent = `Mehtod of Moments λ: ${estimatedLambda.toFixed(2)}`;
+    resultArea.appendChild(lambdaElement);
+
+    createMeanWithVariancePlot(mydata[0].values);
+
+
+}
+
+
+function estimateGeometricParameter(data) {
+    const n = data.length;
+
+    // Calculate the sample mean
+    const sum = data.reduce((total, value) => total + value, 0);
+    const sampleMean = sum / n;
+
+    // Estimate the success probability parameter
+    const estimatedParameter = 1 / sampleMean;
+
+    return estimatedParameter;
+}
+
+function geometric() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+
+    // Validate the number of checkboxes selected
+    if (checkboxes.length !== 1) {
+        alert("Please select exactly one sample.");
+        return;
+    }
+
+    // Get the sample IDs from the checkboxes
+    const sampleIds = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+    // Getting data for the selected samples
+    const mydata = sampleIds.map(sampleId => {
+        const input = document.getElementById(sampleId);
+        const values = input.value.trim().split(/\s+/).map(Number);
+        return {
+            label: sampleId,
+            values: values
+        };
+    });
+
+
+    // Estimate parameter for the geometric distribution
+    const estimatedParameter = estimateGeometricParameter(mydata[0].values);
+
+    // Display estimated parameter
+    const resultArea = document.getElementById('data-result-area');
+    resultArea.innerHTML = ''; // Clear previous results
+
+    var parameterElement = document.createElement('p');
+    parameterElement.textContent = `Maximum Likelihood Estimator p: ${estimatedParameter.toFixed(2)}`;
+    resultArea.appendChild(parameterElement);
+
+    parameterElement = document.createElement('p');
+    parameterElement.textContent = `Method of Moments p: ${estimatedParameter.toFixed(2)}`;
+    resultArea.appendChild(parameterElement);
+
+    createMeanWithVariancePlot(mydata[0].values);
+
+}
+
+function estimateGammaParametersMOM(data) {
+    const n = data.length;
+
+    // Calculate the sample mean and sample variance
+    const sum = data.reduce((total, value) => total + value, 0);
+    const sampleMean = sum / n;
+
+    const sumSquared = data.reduce((total, value) => total + value ** 2, 0);
+    const sampleVariance = (sumSquared / n) - (sampleMean ** 2);
+
+    // Estimate the parameters shape (k) and scale (θ)
+    const estimatedK = (sampleMean ** 2) / sampleVariance;
+    const estimatedTheta = sampleVariance / sampleMean;
+
+    return { k1: estimatedK, theta1: estimatedTheta };
+}
+
+function estimateGammaParametersMLE(data) {
+    const n = data.length;
+
+    // Calculate the sample mean and log of the sample mean
+    const sum = data.reduce((total, value) => total + value, 0);
+    const sampleMean = sum / n;
+    const logSampleMean = Math.log(sampleMean);
+
+    // Calculate the sample log likelihood
+    const logLikelihood = data.reduce((total, value) => total + Math.log(value), 0);
+
+    // Estimate the parameters shape (k) and scale (θ)
+    const estimatedK = (3 - logSampleMean + Math.sqrt((logSampleMean - 3) ** 2 + 24 * logLikelihood)) / (12 * logSampleMean);
+    const estimatedTheta = sampleMean / estimatedK;
+
+    return { k: estimatedK, theta: estimatedTheta };
+}
+
+
+function gamma() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+
+    // Validate the number of checkboxes selected
+    if (checkboxes.length !== 1) {
+        alert("Please select exactly one sample.");
+        return;
+    }
+
+    // Get the sample IDs from the checkboxes
+    const sampleIds = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+    // Getting data for the selected samples
+    const mydata = sampleIds.map(sampleId => {
+        const input = document.getElementById(sampleId);
+        const values = input.value.trim().split(/\s+/).map(Number);
+        return {
+            label: sampleId,
+            values: values
+        };
+    });
+
+
+    // Estimate parameters for the gamma distribution
+    var { k, theta } = estimateGammaParametersMLE(mydata[0].values);
+
+    // Display estimated parameters
+    const resultArea = document.getElementById('data-result-area');
+    resultArea.innerHTML = ''; // Clear previous results
+
+    var parameterElement = document.createElement('p');
+    parameterElement.textContent = `Maximum Likelihood Estimator: k = ${k.toFixed(2)}, θ = ${theta.toFixed(2)}`;
+    resultArea.appendChild(parameterElement);
+
+    var { k1, theta1 } = estimateGammaParametersMOM(mydata[0].values);
+
+    parameterElement = document.createElement('p');
+    parameterElement.textContent = `Method of Moments: k = ${k1.toFixed(2)}, θ = ${theta1.toFixed(2)}`;
+    resultArea.appendChild(parameterElement);
+
+    createMeanWithVariancePlot(mydata[0].values);
+
+}
+
+
+function createMeanWithVariancePlot(data) {
+    const mean = data.reduce((total, value) => total + value, 0) / data.length;
+    const variance = data.reduce((total, value) => total + (value - mean) ** 2, 0) / data.length;
+
+    const plotData = [{
+            x: data,
+            y: new Array(data.length).fill(mean),
+            mode: 'lines',
+            line: { color: 'blue' },
+            name: 'Mean',
+        },
+        {
+            x: data,
+            y: new Array(data.length).fill(mean),
+            error_y: {
+                type: 'data',
+                array: new Array(data.length).fill(Math.sqrt(variance)),
+                visible: true,
+                color: 'gray',
+                thickness: 1,
+                width: 3,
+            },
+            mode: 'markers',
+            marker: {
+                color: 'blue',
+                size: 6,
+            },
+            name: 'Variance',
+        },
+    ];
+
+    const layout = {
+        title: 'Sample Mean with Variance Plot',
+        width: 600, // Set the desired width in pixels
+        height: 400, // Set the desired height in pixels
+        xaxis: {
+            title: 'X-axis',
+        },
+        yaxis: {
+            title: 'Mean',
+        },
+    };
+
+
+    Plotly.newPlot('plotDiv', plotData, layout);
+}
+
+
+function createMeanWithIntervalPlot(data, intervalStart, intervalEnd) {
+    const mean = data.reduce((total, value) => total + value, 0) / data.length;
+    const variance = data.reduce((total, value) => total + (value - mean) ** 2, 0) / data.length;
+
+    const plotData = [{
+            x: data,
+            y: new Array(data.length).fill(mean),
+            mode: 'lines',
+            line: { color: 'blue' },
+            name: 'Mean',
+        },
+        {
+            x: data,
+            y: new Array(data.length).fill(mean),
+            error_y: {
+                type: 'data',
+                array: new Array(data.length).fill(Math.sqrt(variance)),
+                visible: true,
+                color: 'gray',
+                thickness: 1,
+                width: 3,
+            },
+            mode: 'markers',
+            marker: {
+                color: 'blue',
+                size: 6,
+            },
+            name: 'Variance',
+        },
+    ];
+
+    const layout = {
+        title: 'Sample Mean with Variance Plot',
+        width: 600, // Set the desired width in pixels
+        height: 400, // Set the desired height in pixels
+        xaxis: {
+            title: 'X-axis',
+        },
+        yaxis: {
+            title: 'Mean',
+        },
+        shapes: [{
+            type: 'rect',
+            xref: 'x',
+            yref: 'y',
+            x0: intervalStart,
+            x1: intervalEnd,
+            y0: Math.min(...data),
+            y1: Math.max(...data),
+            fillcolor: 'rgba(0, 128, 0, 0.2)', // Set the desired fill color
+            line: {
+                width: 0,
+            },
+        }, ],
+    };
+
+    Plotly.newPlot('plotDiv', plotData, layout);
 }
