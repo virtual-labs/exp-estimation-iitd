@@ -2,38 +2,77 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What is the method of least squares?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "A method used to minimize the sum of squared errors between observed data and a mathematical model.",
+        "b": "A method used to maximize the likelihood function for parameter estimation."
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "The method of least squares is used to minimize the sum of squared errors between observed data and a mathematical model, typically used in regression analysis.",
+        "b": "This statement is incorrect. The method of least squares does not involve maximizing the likelihood function but focuses on minimizing the sum of squared errors."
       },
       "correctAnswer": "a",
-      "difficulty": "beginner"
+      "difficulty": "difficult"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "What is the efficiency of an estimator?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "The degree to which the estimator consistently produces accurate estimates.",
+        "b": "The degree to which the estimator produces precise estimates with minimal variability."
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "This statement is incorrect. Efficiency refers to the degree to which the estimator produces precise estimates with minimal variability, not necessarily accurate estimates.",
+        "b": "Efficiency refers to the degree to which the estimator produces precise estimates with minimal variability, reflecting its ability to make the most efficient use of the available information."
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      "correctAnswer": "b",
+      "difficulty": "difficult"
+    },
+    {
+      "question": "What is the method of moments estimation for the exponential distribution?",
+      "answers": {
+        "a": "Equating the sample mean to the population mean parameter lambda.",
+        "b": "Equating the sample variance to the population mean parameter lambda."
+      },
+      "explanations": {
+        "a": "For the exponential distribution, the method of moments estimation involves equating the sample mean to the population mean parameter lambda, which is the inverse of the rate parameter.",
+        "b": "This statement is incorrect. The method of moments estimation for the exponential distribution focuses on equating the sample mean to the population mean parameter lambda, not the sample variance."
+      },
+      "correctAnswer": "a",
+      "difficulty": "difficult"
+    },
+    {
+      "question": "You have a sample of 100 observations with a sample mean of 50 and a standard deviation of 10. What is the standard error of the mean?",
+      "answers": {
+        "a": "1.0",
+        "b": "0.1",
+        "c": "10.0",
+        "d": "0.01"
+      },
+      "explanations": {
+        "a": "This answer is incorrect. The standard error of the mean is calculated by dividing the standard deviation by the square root of the sample size. In this case, it would be 10 / sqrt(100) = 1.0.",
+        "b": "This answer is incorrect. The standard error of the mean is calculated by dividing the standard deviation by the square root of the sample size. In this case, it would be 10 / sqrt(100) = 1.0.",
+        "c": "This answer is incorrect. The standard error of the mean is calculated by dividing the standard deviation by the square root of the sample size. In this case, it would be 10 / sqrt(100) = 1.0.",
+        "d": "This answer is correct. The standard error of the mean is calculated by dividing the standard deviation by the square root of the sample size. In this case, it would be 10 / sqrt(100) = 1.0."
+      },
+      "correctAnswer": "a",
+      "difficulty": "difficult"
+    },
+    {
+      "question": "You have a sample of 50 observations with a sample mean of 75 and a standard deviation of 5. Construct a 95% confidence interval for the population mean.",
+      "answers": {
+        "a": "72.42 to 77.58",
+        "b": "73.62 to 76.38",
+        "c": "74.13 to 75.87",
+        "d": "74.52 to 75.48"
+      },
+      "explanations": {
+        "a": "This answer is incorrect. To construct a 95% confidence interval, you would use the formula: sample mean ± (critical value) * (standard error). The correct confidence interval would be 75 ± 1.96 * (5 / sqrt(50)), which is approximately 72.42 to 77.58.",
+        "b": "This answer is incorrect. To construct a 95% confidence interval, you would use the formula: sample mean ± (critical value) * (standard error). The correct confidence interval would be 75 ± 1.96 * (5 / sqrt(50)), which is approximately 72.42 to 77.58.",
+        "c": "This answer is incorrect. To construct a 95% confidence interval, you would use the formula: sample mean ± (critical value) * (standard error). The correct confidence interval would be 75 ± 1.96 * (5 / sqrt(50)), which is approximately 72.42 to 77.58.",
+        "d": "This answer is incorrect. To construct a 95% confidence interval, you would use the formula: sample mean ± (critical value) * (standard error). The correct confidence interval would be 75 ± 1.96 * (5 / sqrt(50)), which is approximately 72.42 to 77.58."
+      },
+      "correctAnswer": "a",
+      "difficulty": "difficult"
     }
   ]
 }
