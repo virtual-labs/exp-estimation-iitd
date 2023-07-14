@@ -2,38 +2,69 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What is the method of moments estimation?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Estimating the parameters by equating the sample moments to the population moments.",
+        "b": "Estimating the parameters by calculating the range of values within which they are likely to fall."
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "The method of moments estimation involves estimating the parameters by equating the sample moments (such as the sample mean and variance) to the population moments.",
+        "b": "This statement is incorrect. The method of moments estimation does not involve calculating the range of values for the parameters; it relies on equating sample moments to population moments."
       },
       "correctAnswer": "a",
-      "difficulty": "beginner"
+      "difficulty": "medium"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "What is the maximum likelihood estimation?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Estimating the parameters by maximizing the likelihood function.",
+        "b": "Estimating the parameters by minimizing the sum of squared errors."
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Maximum likelihood estimation involves estimating the parameters by maximizing the likelihood function, which measures the probability of observing the given data.",
+        "b": "This statement is incorrect. Maximum likelihood estimation does not involve minimizing the sum of squared errors; it focuses on maximizing the likelihood function to find the most likely parameter values."
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      "correctAnswer": "a",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the bias of an estimator?",
+      "answers": {
+        "a": "The degree to which the estimator consistently underestimates the true parameter.",
+        "b": "The degree to which the estimator consistently overestimates the true parameter."
+      },
+      "explanations": {
+        "a": "This statement is incorrect. Bias refers to the systematic deviation of the estimator from the true parameter, whether it consistently underestimates or overestimates it.",
+        "b": "Bias refers to the systematic deviation of the estimator from the true parameter, whether it consistently underestimates or overestimates it."
+      },
+      "correctAnswer": "a",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the mean squared error (MSE) of an estimator?",
+      "answers": {
+        "a": "The average squared difference between the estimator and the true parameter.",
+        "b": "The average absolute difference between the estimator and the true parameter."
+      },
+      "explanations": {
+        "a": "The mean squared error (MSE) is the average squared difference between the estimator and the true parameter. It measures the overall accuracy and precision of the estimator.",
+        "b": "This statement is incorrect. The mean squared error (MSE) specifically calculates the squared difference, not the absolute difference, between the estimator and the true parameter."
+      },
+      "correctAnswer": "a",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the method of confidence intervals?",
+      "answers": {
+        "a": "Estimating the parameters by calculating the range of values within which they are likely to fall.",
+        "b": "Estimating the parameters by maximizing the likelihood function."
+      },
+      "explanations": {
+        "a": "The method of confidence intervals involves estimating the parameters by calculating the range of values (confidence interval) within which they are likely to fall, based on sample data.",
+        "b": "This statement is incorrect. The method of confidence intervals is not about maximizing the likelihood function; it focuses on constructing ranges of values (confidence intervals) to estimate the parameters."
+      },
+      "correctAnswer": "a",
+      "difficulty": "medium"
     }
   ]
 }
