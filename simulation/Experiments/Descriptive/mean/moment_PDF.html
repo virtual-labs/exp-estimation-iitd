@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estimation | statsVL</title>
+    <link rel="stylesheet" href="../descriptive.css" />
+    <link rel="stylesheet" href="../../../styles/animation.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap" rel="stylesheet" />
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script src="../../../Scripts/stats.js"></script>
+
+    <script src="https://kit.fontawesome.com/fa99256fbe.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap" rel="stylesheet" />
+    <script src="../script.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.0/p5.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.0/addons/p5.dom.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <style>
+        .sample-input {
+            width: 100%;
+            min-height: 8vh;
+            margin-top: 1vh;
+            font-size: 1.8rem;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="main-grid-item">
+            <header>
+                <div class="animation-underline">
+                    <div class="inline-flex-container">
+                        <h4>
+                            <a class="descrip button mean" href="../mean/mean.html">
+                  Estimation
+                </a>
+                        </h4>
+                    </div>
+                </div>
+
+                <style>
+                    a {
+                        cursor: pointer;
+                    }
+                    
+                    .animation-underline a::before {
+                        background-color: var(--main-primary);
+                    }
+                </style>
+                <a id="home-button" href="/index.html">
+                    <i class="fa-solid fa-house"></i> Statistics Virtual Lab
+                </a>
+            </header>
+        </div>
+
+        <div class="content">
+            <div class="heading">
+                <h2>Point Estimation</h2>
+            </div>
+
+            <div class="main-content">
+                <div class="left">
+                    <div class="data-input-area" id="data-input-area">
+                        <label for="numSamples">Enter the number of samples (n): </label>
+                        <input type="number" id="numSamples" name="numSamples" placeholder="Enter the number of samples">
+
+                        <button id="createInput" onclick=" createSampleInputs();">Enter Sample Data</button>
+
+                        <div id="sampleInputContainer"></div>
+
+                        <div id="sampleSelectionContainer"></div>
+                        <!-- <button id="clear" onclick="clearData();">Clear Data</button> -->
+
+                        <!-- <button id="calculateButton" onclick="pointEstimation();">
+                            Point Estimation
+                        </button> -->
+
+                        <form id="info" autocomplete="off">
+                            <label for="distribution">Choose the type of Distribution:</label>
+                            <select id="distribution" onchange="change()">
+                              <option value="" disabled selected> -- Select a type -- </option>
+                              <option value="normal">Normal Distribution</option>
+                              <option value="poisson">Poisson Distribution</option>
+                              <option value="exp">Exponential Distribution</option>
+                              <option value="geo">Geometric Distribution</option>
+                              <!-- <option value="gamma">Gamma Distribution</option> -->
+                            </select>
+                            <div id="selectedOption"></div>
+                        </form>
+
+                        <button id="Poisson" style="display: none;" onclick="poisson();">
+                            Estimate λ
+                          </button>
+                        <!-- <button id="graph" onclick="createMeanWithVariancePlot();">
+                            Plot
+                          </button> -->
+
+
+                        <button id="exponential" style="display: none;" onclick="exp();">
+                            Estimate λ
+                          </button>
+
+                        <button id="Normal" style="display: none;" onclick="normal();">
+                            Estimate mean(μ) and variance(σ<sup>2</sup>)
+                          </button>
+
+                        <button id="geo" style="display: none;" onclick="geometric();">
+                            Estimate probability of success (p)
+                          </button>
+
+                        <button id="gamma" style="display: none;" onclick="gamma();">
+                            Estimate shape (k) and scale (θ)
+                          </button>
+
+                        <script>
+                            function change() {
+                                document.getElementById("data-result-area").innerHTML = "";
+                                var select = document.getElementById("distribution");
+                                var selectedOptionDiv = document.getElementById("selectedOption");
+                                var poissonButton = document.getElementById("Poisson");
+                                var exponentialButton = document.getElementById("exponential");
+                                var normalButton = document.getElementById("Normal");
+                                var geoButton = document.getElementById("geo");
+                                var gammaButton = document.getElementById("gamma");
+
+                                // Reset button display
+                                poissonButton.style.display = "none";
+                                exponentialButton.style.display = "none";
+                                normalButton.style.display = "none";
+                                geoButton.style.display = "none";
+                                gammaButton.style.display = "none";
+
+                                // Show corresponding button based on the selected option
+                                if (select.value === "poisson") {
+                                    poissonButton.style.display = "block";
+                                } else if (select.value === "exp") {
+                                    exponentialButton.style.display = "block";
+                                } else if (select.value === "normal") {
+                                    normalButton.style.display = "block";
+                                } else if (select.value === "geo") {
+                                    geoButton.style.display = "block";
+                                } else if (select.value === "gamma") {
+                                    gammaButton.style.display = "block";
+                                }
+                            }
+                        </script>
+                    </div>
+
+                    <div id="data-result-area"></div>
+                </div>
+                <div class="right">
+                    <div id="graph-result-area">
+                        <table id="inputTable"></table>
+                        <div id="plotDiv"></div>
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="main-grid-item">
+            <footer>
+                <p>
+                    <!-- <i class="fa-regular fa-copyright"> </i> -->
+                    <a href="https://www.vlab.co.in/" target="_blank">Virutal Lab Project
+            </a>
+                </p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is the primary goal of point estimation in statistics?",
+      "answers": {
+        "a": "To calculate the range of values for a population parameter.",
+        "b": "To estimate a specific value for a population parameter based on sample data.",
+        "c": "To determine the variability within a dataset.",
+        "d": "To identify outliers in the sample data.",
+        "e": "To analyze the correlation between variables in the dataset."
+      },
+      "explanations": {
+        "a": "Incorrect. Point estimation aims to provide a single, best guess for a population parameter, not a range of values.",
+        "b": "Correct! Point estimation involves estimating a specific value (point estimate) for a population parameter based on sample data.",
+        "c": "Incorrect. Point estimation is not focused on determining the variability within a dataset.",
+        "d": "Incorrect. Point estimation is not concerned with identifying outliers in the sample data.",
+        "e": "Incorrect. Point estimation is not related to analyzing correlations between variables."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the purpose of constructing a confidence interval in statistics?",
+      "answers": {
+        "a": "To specify the exact value of a population parameter.",
+        "b": "To provide a range of values within which the population parameter is likely to lie.",
+        "c": "To determine the sample size required for an experiment.",
+        "d": "To calculate the margin of error in a dataset.",
+        "e": "To identify the mode of the dataset."
+      },
+      "explanations": {
+        "a": "Incorrect. Confidence intervals provide a range of values, not an exact value.",
+        "b": "Correct! A confidence interval provides a range of values within which the population parameter is estimated to lie, along with a level of confidence.",
+        "c": "Incorrect. Confidence intervals are not used to determine sample size.",
+        "d": "Incorrect. Confidence intervals are not related to calculating the margin of error in a dataset.",
+        "e": "Incorrect. Confidence intervals do not identify the mode of the dataset."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What does a 95% confidence level mean regarding a confidence interval?",
+      "answers": {
+        "a": "There is a 95% probability that the sample mean is correct.",
+        "b": "There is a 95% probability that the population parameter lies within the interval.",
+        "c": "The sample mean falls within the interval 95% of the time.",
+        "d": "The population parameter is exactly equal to the sample mean with 95% certainty.",
+        "e": "The confidence interval includes 95% of the dataset values."
+      },
+      "explanations": {
+        "a": "Incorrect. Confidence intervals are about the population parameter, not the sample mean.",
+        "b": "Correct! A 95% confidence level means that there is a 95% probability that the population parameter lies within the interval.",
+        "c": "Incorrect. The confidence interval is not about the sample mean falling within the interval.",
+        "d": "Incorrect. Confidence intervals are about estimating the population parameter, not about the sample mean.",
+        "e": "Incorrect. Confidence intervals do not include a specific percentage of dataset values."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which of the following factors does NOT affect the width of a confidence interval?",
+      "answers": {
+        "a": "Sample size.",
+        "b": "Confidence level.",
+        "c": "Population variability.",
+        "d": "Number of observations in the dataset.",
+        "e": "The mean of the sample."
+      },
+      "explanations": {
+        "a": "Incorrect. Sample size affects the width of a confidence interval.",
+        "b": "Incorrect. Confidence level affects the width of a confidence interval.",
+        "c": "Incorrect. Population variability affects the width of a confidence interval.",
+        "d": "Correct! The number of observations in the dataset is essentially the sample size, which does affect the width of a confidence interval.",
+        "e": "Incorrect. The mean of the sample is not a factor that affects the width of a confidence interval."
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "In point estimation, what is a point estimate?",
+      "answers": {
+        "a": "A range of values within which the population parameter is likely to lie.",
+        "b": "A specific numerical value that estimates the population parameter based on sample data.",
+        "c": "The margin of error in the sample data.",
+        "d": "The standard deviation of the sample data.",
+        "e": "The mean of the population."
+      },
+      "explanations": {
+        "a": "Incorrect. A point estimate is a specific value, not a range.",
+        "b": "Correct! A point estimate is a specific numerical value that estimates the population parameter based on sample data.",
+        "c": "Incorrect. The margin of error is not called a point estimate.",
+        "d": "Incorrect. The standard deviation of the sample is not called a point estimate.",
+        "e": "Incorrect. The mean of the population is not a point estimate."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    }
+  ]
+}
