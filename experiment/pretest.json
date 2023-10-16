@@ -2,69 +2,99 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "What is the method of moments estimation?",
+      "question": "What is the primary goal of point estimation in statistics?",
       "answers": {
-        "a": "Estimating the parameters by equating the sample moments to the population moments.",
-        "b": "Estimating the parameters by calculating the range of values within which they are likely to fall."
+        "a": "To calculate the range of values for a population parameter.",
+        "b": "To estimate a specific value for a population parameter based on sample data.",
+        "c": "To determine the variability within a dataset.",
+        "d": "To identify outliers in the sample data.",
+        "e": "To analyze the correlation between variables in the dataset."
       },
       "explanations": {
-        "a": "The method of moments estimation involves estimating the parameters by equating the sample moments (such as the sample mean and variance) to the population moments.",
-        "b": "This statement is incorrect. The method of moments estimation does not involve calculating the range of values for the parameters; it relies on equating sample moments to population moments."
+        "a": "Incorrect. Point estimation aims to provide a single, best guess for a population parameter, not a range of values.",
+        "b": "Correct! Point estimation involves estimating a specific value (point estimate) for a population parameter based on sample data.",
+        "c": "Incorrect. Point estimation is not focused on determining the variability within a dataset.",
+        "d": "Incorrect. Point estimation is not concerned with identifying outliers in the sample data.",
+        "e": "Incorrect. Point estimation is not related to analyzing correlations between variables."
       },
-      "correctAnswer": "a",
-      "difficulty": "medium"
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
     },
     {
-      "question": "What is the maximum likelihood estimation?",
+      "question": "What is the purpose of constructing a confidence interval in statistics?",
       "answers": {
-        "a": "Estimating the parameters by maximizing the likelihood function.",
-        "b": "Estimating the parameters by minimizing the sum of squared errors."
+        "a": "To specify the exact value of a population parameter.",
+        "b": "To provide a range of values within which the population parameter is likely to lie.",
+        "c": "To determine the sample size required for an experiment.",
+        "d": "To calculate the margin of error in a dataset.",
+        "e": "To identify the mode of the dataset."
       },
       "explanations": {
-        "a": "Maximum likelihood estimation involves estimating the parameters by maximizing the likelihood function, which measures the probability of observing the given data.",
-        "b": "This statement is incorrect. Maximum likelihood estimation does not involve minimizing the sum of squared errors; it focuses on maximizing the likelihood function to find the most likely parameter values."
+        "a": "Incorrect. Confidence intervals provide a range of values, not an exact value.",
+        "b": "Correct! A confidence interval provides a range of values within which the population parameter is estimated to lie, along with a level of confidence.",
+        "c": "Incorrect. Confidence intervals are not used to determine sample size.",
+        "d": "Incorrect. Confidence intervals are not related to calculating the margin of error in a dataset.",
+        "e": "Incorrect. Confidence intervals do not identify the mode of the dataset."
       },
-      "correctAnswer": "a",
-      "difficulty": "medium"
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
     },
     {
-      "question": "What is the bias of an estimator?",
+      "question": "What does a 95% confidence level mean regarding a confidence interval?",
       "answers": {
-        "a": "The degree to which the estimator consistently underestimates the true parameter.",
-        "b": "The degree to which the estimator consistently overestimates the true parameter."
+        "a": "There is a 95% probability that the sample mean is correct.",
+        "b": "There is a 95% probability that the population parameter lies within the interval.",
+        "c": "The sample mean falls within the interval 95% of the time.",
+        "d": "The population parameter is exactly equal to the sample mean with 95% certainty.",
+        "e": "The confidence interval includes 95% of the dataset values."
       },
       "explanations": {
-        "a": "This statement is incorrect. Bias refers to the systematic deviation of the estimator from the true parameter, whether it consistently underestimates or overestimates it.",
-        "b": "Bias refers to the systematic deviation of the estimator from the true parameter, whether it consistently underestimates or overestimates it."
+        "a": "Incorrect. Confidence intervals are about the population parameter, not the sample mean.",
+        "b": "Correct! A 95% confidence level means that there is a 95% probability that the population parameter lies within the interval.",
+        "c": "Incorrect. The confidence interval is not about the sample mean falling within the interval.",
+        "d": "Incorrect. Confidence intervals are about estimating the population parameter, not about the sample mean.",
+        "e": "Incorrect. Confidence intervals do not include a specific percentage of dataset values."
       },
-      "correctAnswer": "a",
-      "difficulty": "medium"
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
     },
     {
-      "question": "What is the mean squared error (MSE) of an estimator?",
+      "question": "Which of the following factors does NOT affect the width of a confidence interval?",
       "answers": {
-        "a": "The average squared difference between the estimator and the true parameter.",
-        "b": "The average absolute difference between the estimator and the true parameter."
+        "a": "Sample size.",
+        "b": "Confidence level.",
+        "c": "Population variability.",
+        "d": "Number of observations in the dataset.",
+        "e": "The mean of the sample."
       },
       "explanations": {
-        "a": "The mean squared error (MSE) is the average squared difference between the estimator and the true parameter. It measures the overall accuracy and precision of the estimator.",
-        "b": "This statement is incorrect. The mean squared error (MSE) specifically calculates the squared difference, not the absolute difference, between the estimator and the true parameter."
+        "a": "Incorrect. Sample size affects the width of a confidence interval.",
+        "b": "Incorrect. Confidence level affects the width of a confidence interval.",
+        "c": "Incorrect. Population variability affects the width of a confidence interval.",
+        "d": "Correct! The number of observations in the dataset is essentially the sample size, which does affect the width of a confidence interval.",
+        "e": "Incorrect. The mean of the sample is not a factor that affects the width of a confidence interval."
       },
-      "correctAnswer": "a",
-      "difficulty": "medium"
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
     },
     {
-      "question": "What is the method of confidence intervals?",
+      "question": "In point estimation, what is a point estimate?",
       "answers": {
-        "a": "Estimating the parameters by calculating the range of values within which they are likely to fall.",
-        "b": "Estimating the parameters by maximizing the likelihood function."
+        "a": "A range of values within which the population parameter is likely to lie.",
+        "b": "A specific numerical value that estimates the population parameter based on sample data.",
+        "c": "The margin of error in the sample data.",
+        "d": "The standard deviation of the sample data.",
+        "e": "The mean of the population."
       },
       "explanations": {
-        "a": "The method of confidence intervals involves estimating the parameters by calculating the range of values (confidence interval) within which they are likely to fall, based on sample data.",
-        "b": "This statement is incorrect. The method of confidence intervals is not about maximizing the likelihood function; it focuses on constructing ranges of values (confidence intervals) to estimate the parameters."
+        "a": "Incorrect. A point estimate is a specific value, not a range.",
+        "b": "Correct! A point estimate is a specific numerical value that estimates the population parameter based on sample data.",
+        "c": "Incorrect. The margin of error is not called a point estimate.",
+        "d": "Incorrect. The standard deviation of the sample is not called a point estimate.",
+        "e": "Incorrect. The mean of the population is not a point estimate."
       },
-      "correctAnswer": "a",
-      "difficulty": "medium"
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
     }
   ]
 }
