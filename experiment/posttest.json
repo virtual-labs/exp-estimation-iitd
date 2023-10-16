@@ -2,43 +2,55 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "What is the method of least squares?",
+      "question": "A researcher wants to estimate the average time spent by people on a new app. A sample of 200 users showed an average usage time of 15 minutes with a standard deviation of 3 minutes. What is the 90% confidence interval for the average usage time on the app?",
       "answers": {
-        "a": "A method used to minimize the sum of squared errors between observed data and a mathematical model.",
-        "b": "A method used to maximize the likelihood function for parameter estimation."
+        "a": "14.2 to 15.8 minutes",
+        "b": "14.7 to 15.3 minutes",
+        "c": "13.9 to 16.1 minutes",
+        "d": "14.1 to 15.9 minutes"
       },
       "explanations": {
-        "a": "The method of least squares is used to minimize the sum of squared errors between observed data and a mathematical model, typically used in regression analysis.",
-        "b": "This statement is incorrect. The method of least squares does not involve maximizing the likelihood function but focuses on minimizing the sum of squared errors."
+        "a": "Incorrect. This interval is not calculated correctly.",
+        "b": "Incorrect. This interval is not calculated correctly.",
+        "c": "Correct! The 90% confidence interval for the average usage time is calculated as 13.9 to 16.1 minutes.",
+        "d": "Incorrect. This interval is not calculated correctly."
       },
-      "correctAnswer": "a",
-      "difficulty": "difficult"
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
     },
     {
-      "question": "What is the efficiency of an estimator?",
+       "question": "A sample of 150 students was taken, and their average score on a standardized test was 85 with a standard deviation of 10. What is the standard error of the mean for this sample?",
       "answers": {
-        "a": "The degree to which the estimator consistently produces accurate estimates.",
-        "b": "The degree to which the estimator produces precise estimates with minimal variability."
+        "a": "0.47",
+        "b": "0.56",
+        "c": "0.71",
+        "d": "0.94"
       },
       "explanations": {
-        "a": "This statement is incorrect. Efficiency refers to the degree to which the estimator produces precise estimates with minimal variability, not necessarily accurate estimates.",
-        "b": "Efficiency refers to the degree to which the estimator produces precise estimates with minimal variability, reflecting its ability to make the most efficient use of the available information."
+        "a": "Incorrect. The standard error of the mean is calculated differently.",
+        "b": "Incorrect. The standard error of the mean is calculated differently.",
+        "c": "Correct! The standard error of the mean for this sample is \(0.71\).",
+        "d": "Incorrect. The standard error of the mean is calculated differently."
       },
-      "correctAnswer": "b",
-      "difficulty": "difficult"
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
     },
     {
-      "question": "What is the method of moments estimation for the exponential distribution?",
+      "question": "A sample of 80 cars showed an average fuel efficiency of 30 miles per gallon with a standard deviation of 3 miles per gallon. What is the margin of error for a 99% confidence interval for the population mean fuel efficiency?",
       "answers": {
-        "a": "Equating the sample mean to the population mean parameter lambda.",
-        "b": "Equating the sample variance to the population mean parameter lambda."
+        "a": "0.3 miles per gallon",
+        "b": "0.6 miles per gallon",
+        "c": "0.9 miles per gallon",
+        "d": "1.2 miles per gallon"
       },
       "explanations": {
-        "a": "For the exponential distribution, the method of moments estimation involves equating the sample mean to the population mean parameter lambda, which is the inverse of the rate parameter.",
-        "b": "This statement is incorrect. The method of moments estimation for the exponential distribution focuses on equating the sample mean to the population mean parameter lambda, not the sample variance."
+        "a": "Incorrect. The margin of error is larger for a 99% confidence level.",
+        "b": "Correct! The margin of error for a 99% confidence interval is calculated as \(1.2\) miles per gallon.",
+        "c": "Incorrect. The margin of error is larger for a 99% confidence level.",
+        "d": "Incorrect. The margin of error is larger for a 99% confidence level."
       },
-      "correctAnswer": "a",
-      "difficulty": "difficult"
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
     },
     {
       "question": "You have a sample of 100 observations with a sample mean of 50 and a standard deviation of 10. What is the standard error of the mean?",
