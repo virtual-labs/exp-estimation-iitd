@@ -1,1 +1,1 @@
-### Aim of the experiment
+This experiment aims to teach students the principles of point and interval estimation, enabling them to calculate precise point estimates and construct reliable confidence intervals for population parameters based on sample data.
