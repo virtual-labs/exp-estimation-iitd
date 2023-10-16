@@ -29,7 +29,7 @@
       "explanations": {
         "a": "Incorrect. The standard error of the mean is calculated differently.",
         "b": "Incorrect. The standard error of the mean is calculated differently.",
-        "c": "Correct! The standard error of the mean for this sample is \(0.71\).",
+        "c": "Correct! The standard error of the mean for this sample is 0.71.",
         "d": "Incorrect. The standard error of the mean is calculated differently."
       },
       "correctAnswer": "c",
@@ -45,7 +45,7 @@
       },
       "explanations": {
         "a": "Incorrect. The margin of error is larger for a 99% confidence level.",
-        "b": "Correct! The margin of error for a 99% confidence interval is calculated as \(1.2\) miles per gallon.",
+        "b": "Correct! The margin of error for a 99% confidence interval is calculated as 1.2 miles per gallon.",
         "c": "Incorrect. The margin of error is larger for a 99% confidence level.",
         "d": "Incorrect. The margin of error is larger for a 99% confidence level."
       },
