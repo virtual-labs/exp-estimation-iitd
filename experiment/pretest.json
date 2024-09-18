@@ -2,7 +2,6 @@
   "version": 2.0,
   "questions": [
     {
-
       "question": "What is the primary goal of point estimation in statistics?",
       "answers": {
         "a": "To calculate the range of values for a population parameter.",
@@ -17,48 +16,11 @@
         "c": "Incorrect. Point estimation is not focused on determining the variability within a dataset.",
         "d": "Incorrect. Point estimation is not concerned with identifying outliers in the sample data.",
         "e": "Incorrect. Point estimation is not related to analyzing correlations between variables."
-=======
-      "question": "What is point estimation?",
-      "answers": {
-        "a": "Estimating a range of values within which the true parameter is likely to fall.",
-        "b": "Estimating the true parameter with a single value."
-      },
-      "explanations": {
-        "a": "This statement is incorrect. Point estimation involves estimating the true parameter with a single value.",
-        "b": "Point estimation involves estimating the true parameter with a single value, such as the sample mean or sample proportion."
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "What is interval estimation?",
-      "answers": {
-        "a": "Estimating the true parameter with a single value.",
-        "b": "Estimating a range of values within which the true parameter is likely to fall."
-      },
-      "explanations": {
-        "a": "Interval estimation involves estimating a range of values within which the true parameter is likely to fall, using confidence intervals.",
-        "b": "This statement is incorrect. Interval estimation involves estimating a range of values within which the true parameter is likely to fall, using confidence intervals."
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "What is a confidence interval?",
-      "answers": {
-        "a": "A range of values that estimates the true parameter with a high level of confidence.",
-        "b": "A range of values that estimates the true parameter with a low level of confidence."
-      },
-      "explanations": {
-        "a": "A confidence interval is a range of values that estimates the true parameter with a high level of confidence, typically expressed as a percentage.",
-        "b": "This statement is incorrect. A confidence interval estimates the true parameter with a high level of confidence, not a low level of confidence."
-
       },
       "correctAnswer": "b",
       "difficulty": "intermediate"
     },
     {
-
       "question": "What is the purpose of constructing a confidence interval in statistics?",
       "answers": {
         "a": "To specify the exact value of a population parameter.",
@@ -133,32 +95,6 @@
       },
       "correctAnswer": "b",
       "difficulty": "intermediate"
-=======
-      "question": "What is the margin of error in a confidence interval?",
-      "answers": {
-        "a": "The range of values within which the true parameter is likely to fall.",
-        "b": "The maximum amount by which the point estimate may differ from the true parameter."
-      },
-      "explanations": {
-        "a": "This statement is incorrect. The margin of error is the maximum amount by which the point estimate may differ from the true parameter.",
-        "b": "The margin of error is the maximum amount by which the point estimate may differ from the true parameter, and it is used to construct the confidence interval."
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "What is the sample size needed to decrease the width of a confidence interval?",
-      "answers": {
-        "a": "Increase the sample size.",
-        "b": "Decrease the sample size."
-      },
-      "explanations": {
-        "a": "To decrease the width of a confidence interval, you need to increase the sample size. A larger sample size provides more information and reduces the uncertainty in the estimate.",
-        "b": "This statement is incorrect. Decreasing the sample size would not help decrease the width of a confidence interval; in fact, it may increase the uncertainty in the estimate."
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-
     }
   ]
 }
